@@ -25,6 +25,8 @@ for text extraction and [Kokoro](https://github.com/hexgrad/kokoro) neural TTS f
 
 ## Install
 
+## A proper install link will be provided after the project is finished
+
 ```bash
 uv sync
 ```
