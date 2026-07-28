@@ -1,7 +1,29 @@
 [project]
 name = "pdftoaudio"
 version = "0.1.0"
-description = "Add your description here"
+description = "Convert PDFs into spoken audio using PyMuPDF extraction and Kokoro neural TTS"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "kokoro>=0.9.4",
+    "numpy>=2.5.0",
+    "pymupdf>=1.28.0",
+    "regex>=2026.6.28",
+    "soundfile>=0.14.0",
+    "torch>=2.12.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+pdftoaudio = "pdftoaudio.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pdftoaudio"]
